@@ -89,14 +89,18 @@ export function PokeCard(props) {
   return (
     <div className='poke-card'>
       {skill && (
-        <Modal handleCloseModal={() => setSkill(null)}>
+        <Modal
+          handleCloseModal={() => {
+            setSkill(null);
+          }}
+        >
           <div>
             <h6>Name</h6>
             <h2 className='skill-name'>{skill.name.replaceAll("-", " ")}</h2>
           </div>
           <div>
             <h6>Description</h6>
-            <p>{skill.description.replaceAll("-", " ")}</p>
+            <p>{skill.description}</p>
           </div>
         </Modal>
       )}
